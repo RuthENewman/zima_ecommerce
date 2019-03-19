@@ -1,0 +1,554 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin-top: 0;
+  text-align: center;
+  color: white;
+  margin-left: 1em;
+}
+
+h2 {
+  margin-top: 1em;
+  text-align: center;
+}
+
+h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  text-align: right;
+  color: white;
+  margin: 1em;
+}
+
+label, h3, h4, h5 {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+#all-products-heading {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.product-container {
+  position: relative;
+  width: 96%;
+  margin: 0 auto;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.product-item {
+  margin: 2%;
+  padding: 1em;
+  border-style: solid;
+  border-width: 0.1em;
+  width: 300px;
+  position: relative;
+  border-radius: 5%;
+}
+
+.product-item img {
+  width: 94%;
+  margin: 3%;
+}
+
+.product-item h3 {
+  text-align: center;
+}
+
+.product-item button {
+  font-size: 1em;
+  margin: 0.4em;
+}
+
+.shopping-cart {
+  width: 70%;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 0.1em;
+  border-color: black;
+  border-radius: 3%;
+  padding: 0.5em;
+}
+
+.cart_button {
+  font-size: 1em;
+  padding: 0.3em;
+  border-radius: 4%;
+}
+
+.name {
+
+}
+
+h3#shopping-cart-total {
+  color: green;
+  font-weight: bold;
+  text-align: right;
+}
+
+h3#shopping-cart-header {
+  text-align: center;
+}
+
+.name a,
+.main_nav a {
+  padding: 0.5em;
+  display: block;
+}
+
+/* I want this in media section only but not working currently */
+.name, .main_nav li {
+  text-align: center;
+  background-color: black;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  display: inline-block;
+}
+
+.main_header {
+  background-color: #000000;
+  padding: 1em, 0;
+}
+
+
+.main_content {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.main_footer {
+  text-align: center;
+  padding: 2em 0;
+  background: #000000;
+  margin-top: 1em;
+  height: 40px;
+}
+
+.main_nav a {
+  font-size: .95em;
+  color: #3acec2;
+}
+
+.main_nav a:hover {
+  color: white;
+  text-transform: uppercase;
+}
+
+.main_nav {
+  display: inline;
+  margin-bottom: 1em;
+}
+
+.header_container {
+  padding-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.container {
+  width: 200px;
+  height: 200px;
+  margin: 4%;
+  position: relative;
+}
+
+.image {
+  display: block;
+  width: 250px;
+  height: 250px;
+  margin: 2%;
+}
+
+.overlay_type_1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  width: 250px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+  border-radius: 4%;
+  margin: 2%;
+}
+
+.overlay_type_2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  width: 250px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #000000;
+  border-radius: 4%;
+  margin: 2%;
+}
+
+.product_overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  width: 250px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+  border-radius: 4%;
+  margin: 2%;
+}
+
+ .product-item:hover .product-overlay {
+   opacity: 1;
+ }
+
+.container:hover .overlay_type_1 {
+  opacity: 1;
+}
+
+.container:hover .overlay_type_2 {
+  opacity: 1;
+}
+
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 80px;
+  border: 10px solid #f1f1f1;
+  position: fixed; /* Stay fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.bg-image {
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#home-page-div {
+   height: 1000px;
+}
+
+/* Images used */
+#img1 {
+  background-image: url("https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/forest.jpg");
+  height: 100%;
+}
+
+#img2 {
+  background-image: url("https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/architecture2.jpg");
+}
+#img3 {
+  background-image: url("https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/architecture1.jpg");
+}
+#img4 {
+  background-image: url("https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/kremlin.jpg");
+}
+
+.category_eng {
+  font-family: 'Roboto', sans-serif;
+}
+
+.category_rus {
+  font-family: 'Roboto', sans-serif;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  margin-top: 3em;
+  margin-bottom: 0;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+  margin-bottom: 5%;
+}
+
+.col-25 p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.checkout_container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  margin: 0 auto;
+  width: 50%;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+}
+
+label {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.checkout-icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+.centre_text {
+  font-size: 5em;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.centre_text_rus {
+  font-size: 5em;
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  transform: translate(-50%, -50%)
+}
+
+#icons_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#about_header {
+  border-color: black;
+  border-style: dotted;
+  color: black;
+  border-radius: 4%;
+  position: relative;
+  width: 30%;
+  margin: 0 auto;
+  padding: 0.4em;
+  position: relative;
+
+}
+
+#about_summary {
+  color: black;
+  border-color: black;
+  border-style: dotted;
+  position: relative;
+  border-radius: 2%;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#very_large_header {
+  font-size: 3em;
+  color: black;
+  border-color: black;
+  border-style: dotted;
+  border-radius: 4%;
+  padding: 1em;
+  margin: 3em;
+}
+
+
+
+/* // Side Nav Bar */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+
+.sidenav a {
+  padding: 8px 8px 8px 20px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+
+/* // Media Queries */
+
+@media (min-width: 769px) {
+  .wrap {
+    min-height: calc(100vh - 89px);
+  }
+
+
+  .main_content {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .name,
+  .main_nav,
+  .main_nav li {
+    display: inline-block;
+  }
+
+  .row {
+   flex-direction: column-reverse;
+ }
+ .col-25 {
+   margin-bottom: 0;
+   margin-top: 1.5em;
+ }
+ @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+
+  .image, .overlay_type_1, .overlay_type_2 {
+    margin: 5%;
+  }
+}
+}
