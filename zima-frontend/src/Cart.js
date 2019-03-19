@@ -15,9 +15,9 @@ class Cart extends Component {
   totalPrice = () => {
     let totalPriceOfCart = 0;
     this.props.productsInCart.map(
-      product => totalPriceOfCart += product.price
+      product => totalPriceOfCart += parseFloat(product.price)
     )
-    return parseFloat(totalPriceOfCart);
+    return parseFloat(totalPriceOfCart.toFixed(2));
   }
 
   componentDidMount() {
@@ -46,7 +46,8 @@ class Cart extends Component {
             ? this.props.productsInCart.map(
             product =>
           (<div>
-            <h3 className="category_eng">{product.name} <span className="price">£{product.price}</span></h3>
+            <h3 className="category_eng">{product.name} <span className="price">£{product.price}</span>
+            <button className="category_eng remove_button" onClick={() => this.props.removeFromCart(product)}>Remove from cart</button></h3>
           </div>)
           )
           : <h3 className="category_eng">You have no items in your cart!</h3>

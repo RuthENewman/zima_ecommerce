@@ -33,7 +33,11 @@ class Main extends Component {
         selectedCategory={this.props.selectedCategory}/>} />
       <Route exact path="/comingsoon" component={ComingSoon} />
       <Route exact path="/checkoutform" component={CheckoutForm} />
-      <Route exact path="/shoppingcart" component={() => <Cart productsInCart={this.props.productsInCart}/>} />
+      <Route exact path="/shoppingcart" component={() =>
+        <Cart
+        productsInCart={this.props.productsInCart}
+        removeFromCart={this.props.removeFromCart}
+        />} />
     </Fragment>
     )
   }

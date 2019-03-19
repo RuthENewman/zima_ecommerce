@@ -39,6 +39,12 @@ class App extends Component {
     alert('Product added to cart!')
   }
 
+  removeFromCart = product => {
+    this.setState({
+      productsInCart: this.state.productsInCart.filter(cartProduct => cartProduct.id !== product.id)
+    })
+  }
+
   selectCategory = category => {
     this.setState({
       selectedCategory: category,
@@ -60,6 +66,7 @@ class App extends Component {
           <Main
           products={this.state.products}
           addToCart={this.addToCart}
+          removeFromCart={this.removeFromCart}
           productsInCart={this.state.productsInCart}
           selectCategory={this.selectCategory}
           selectedCategory={this.state.selectedCategory}

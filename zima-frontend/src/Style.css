@@ -84,6 +84,8 @@ a {
 
 .product-item button {
   font-size: 1em;
+  padding: 0.4em;
+  border-radius: 5%;
   margin: 0.4em;
 }
 
@@ -101,6 +103,13 @@ a {
   font-size: 1em;
   padding: 0.3em;
   border-radius: 4%;
+}
+
+.remove_button {
+  font-size: 0.7em;
+  padding: 0.4em;
+  margin: 0.3em;
+  border-radius: 5%;
 }
 
 .name {
