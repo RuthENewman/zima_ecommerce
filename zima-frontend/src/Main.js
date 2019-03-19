@@ -7,6 +7,7 @@ import ComingSoon from './ComingSoon';
 import CheckoutForm from './CheckoutForm';
 import BrowsingByTheme from './BrowsingByTheme';
 import Cart from './Cart';
+import SignInForm from './SignInForm';
 import ProductsByTheme from './ProductsByTheme';
 
 class Main extends Component {
@@ -17,7 +18,9 @@ class Main extends Component {
     <Fragment>
       <Route exact path="/" component={HomePage} />
       <Route exact path="/about" component={About} />
-      <Route exact path="/signin" component={SignInForm} />
+      <Route exact path="/signin"
+        component={(routerProps) => <SignInForm
+          signin={this.props.signIn} {...routerProps}/>}/>
       <Route exact path="/allproducts" component={() => <BrowseAll
         products={this.props.products}
         productsInCart={this.props.productsInCart}

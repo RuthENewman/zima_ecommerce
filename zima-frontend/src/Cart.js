@@ -32,7 +32,7 @@ class Cart extends Component {
 
   render() {
     return (
-
+    <div className="main_content">
       <div className="shopping-cart checkout_container">
             <h3 id="#shopping-cart-header">My Cart
             <span className="price">
@@ -64,7 +64,7 @@ class Cart extends Component {
         }
 
       </div>
-
+    </div>
     )
   }
 
