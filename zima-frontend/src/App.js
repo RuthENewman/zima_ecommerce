@@ -16,6 +16,7 @@ class App extends Component {
       products: [],
       productsInCart: [],
       selectedCategory: null,
+      username: '',
     }
 
   }
@@ -30,6 +31,18 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchProducts()
+  }
+
+  signin = username => {
+    this.setState({
+      username: username
+    })
+  }
+
+  signout = () => {
+    this.setState({
+      username: ''
+    })
   }
 
   addToCart = product => {
@@ -62,7 +75,9 @@ class App extends Component {
 
       <BrowserRouter>
         <Sidebar />
-        <Navbar />
+        <Navbar
+        username={this.state.username}
+        />
           <Main
           products={this.state.products}
           addToCart={this.addToCart}
@@ -71,6 +86,8 @@ class App extends Component {
           selectCategory={this.selectCategory}
           selectedCategory={this.state.selectedCategory}
           deselectCategory={this.deselectCategory}
+          signin={this.signin}
+          username={this.state.username}
           />
 
         <ZimaFooter />

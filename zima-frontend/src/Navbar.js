@@ -20,6 +20,8 @@ class Navbar extends Component {
             <li className="category_eng"><Link to="/allbytheme">Browse By Theme</Link></li>
             <li className="category_eng"><Link to="/shoppingcart">Shopping Cart</Link></li>
             <li className="category_eng"><Link to="/checkout">Checkout</Link></li>
+            <li className="category_eng"><Link to="/createaccount">Create an account</Link></li>
+            <li className="category_eng"><Link to="/login">Log in</Link></li>
             <li className="category_eng"><Link to="/myaccount">My Account</Link></li>
             <li className="category_rus"><Link to="/comingsoon">По-Русский</Link></li>
           </ul>

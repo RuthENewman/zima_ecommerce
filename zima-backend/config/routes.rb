@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       get 'categories/:category_name/products', to: 'products#index_products_by_category'
       get 'products', to: 'products#index'
       get 'categories', to: 'categories#index'
+      resources :users, only: [:index]
+      post 'signin', to: 'users#signin'
     end
   end
 end

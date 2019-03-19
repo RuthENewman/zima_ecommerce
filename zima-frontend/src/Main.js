@@ -17,6 +17,7 @@ class Main extends Component {
     <Fragment>
       <Route exact path="/" component={HomePage} />
       <Route exact path="/about" component={About} />
+      <Route exact path="/signin" component={SignInForm} />
       <Route exact path="/allproducts" component={() => <BrowseAll
         products={this.props.products}
         productsInCart={this.props.productsInCart}

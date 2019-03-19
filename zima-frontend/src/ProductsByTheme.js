@@ -8,7 +8,7 @@ class ProductsByTheme extends Component {
     super()
 
     this.state = {
-      selectedProducts: []
+      selectedProducts: [],
     }
   }
 
@@ -17,7 +17,7 @@ class ProductsByTheme extends Component {
       .then(response => response.json())
       .then(data => this.setState({
         selectedProducts: data
-      }), () => console.log("STATE: ", this.state))
+      }))
   }
 
   componentDidMount() {
