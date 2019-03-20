@@ -527,6 +527,13 @@ span.price {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  border-style: dotted;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 1.5em;
 }
 
 

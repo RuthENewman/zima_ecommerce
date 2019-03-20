@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index]
       post 'signin', to: 'users#signin'
       get 'validate', to: 'users#validate'
+      get 'myaccount', to: 'users#get_order_history'
     end
   end
 end

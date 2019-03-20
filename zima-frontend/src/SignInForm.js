@@ -11,17 +11,18 @@ class SignInForm extends Component {
     }
   }
 
-  handleSubmit = () => {
+  handleSubmit = (event) => {
     const { signin, history } = this.props
     const user = this.state
+    event.preventDefault()
     API.signin(user)
       .then(data => {
         if (data.error) {
           alert('Wrong!')
         } else {
-          // event.preventDefault()
-          signin(data.email)
-          history.push('/orderhistory')
+
+          signin(data)
+          history.push('/myaccount')
         }
       })
   }

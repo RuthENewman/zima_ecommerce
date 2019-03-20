@@ -9,6 +9,7 @@ class ProductsByTheme extends Component {
 
     this.state = {
       selectedProducts: [],
+      shuffledProducts: []
     }
   }
 
@@ -18,6 +19,13 @@ class ProductsByTheme extends Component {
       .then(data => this.setState({
         selectedProducts: data
       }))
+      .then(this.shuffleProductsByTheme)
+  }
+
+  shuffleProductsByTheme = () => {
+    this.setState({
+      shuffledProducts: this.props.shuffle(this.state.selectedProducts)
+    })
   }
 
   componentDidMount() {

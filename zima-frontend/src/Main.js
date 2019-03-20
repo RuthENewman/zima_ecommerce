@@ -21,7 +21,7 @@ class Main extends Component {
       <Route exact path="/about" component={About} />
       <Route exact path="/signin"
         component={(routerProps) => <SignInForm
-          signin={this.props.signIn} {...routerProps}/>}/>
+          signin={this.props.signin} {...routerProps}/>}/>
       <Route exact path="/allproducts" component={() => <BrowseAll
         products={this.props.products}
         productsInCart={this.props.productsInCart}
@@ -36,7 +36,9 @@ class Main extends Component {
         component={() => <ProductsByTheme
           productsInCart={this.props.productsInCart}
           addToCart={this.props.addToCart}
-        selectedCategory={this.props.selectedCategory}/>} />
+          selectedCategory={this.props.selectedCategory}
+          shuffle={this.props.shuffle}
+        />} />
       <Route exact path="/comingsoon" component={ComingSoon} />
       <Route exact path="/checkoutform" component={CheckoutForm} />
       <Route exact path="/shoppingcart" component={() =>

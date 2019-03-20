@@ -37,6 +37,20 @@ class App extends Component {
     }
   }
 
+  signin = user => {
+    localStorage.setItem('token', user.token)
+    this.setState({
+      username: user.first_name
+    })
+  }
+
+  signout = () => {
+    localStorage.removeItem('token')
+    this.setState({
+      username: ''
+    })
+  }
+
   fetchProducts() {
     fetch(productsURL)
       .then(response => response.json())
@@ -47,28 +61,18 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchProducts()
-    const username = localStorage.getItem('username')
-    API.validate()
-      .then(data => {
-        if (data.error) {
-          this.signout()
-        } else {
-          this.signin(username)
-          this.props.history.push('/orderhistory')
-        }
-      })
-  }
+    if (localStorage.getItem('token')) {
+      API.validate()
+        .then(data => {
+          if (data.error) {
+            this.signout()
+          } else {
+            this.signin(data)
+            this.props.history.push('/myaccount')
+          }
+        })
+    }
 
-  signin = username => {
-    this.setState({
-      username: username
-    })
-  }
-
-  signout = () => {
-    this.setState({
-      username: ''
-    })
   }
 
   addToCart = product => {

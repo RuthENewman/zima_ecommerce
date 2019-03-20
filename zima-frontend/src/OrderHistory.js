@@ -30,14 +30,15 @@ class OrderHistory extends Component {
   render() {
     return(
       <div id="order-history" className="user-list">
-        <h3>My order history: </h3>
-        {
-          this.state.orders.length === 0
-          ? <p>You don't have any orders yet!<Link to="/allproducts">View all products</Link></p>
-            : this.state.orders.map(order => (
-              <Order key={order.id} order={order} />
-            ))
-        }
+        <h3 className="category_eng">Hi {this.props.username}!</h3>
+        <h3 className="category_eng">Your order history: </h3>
+          <ul>
+            {
+              this.state.orders > 0
+              ? this.state.orders.map(order => <li>Your order</li>)
+              : <p className="category_eng">You haven't ordered anything yet!</p>
+            }
+          </ul>
       </div>
     )
   }

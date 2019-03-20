@@ -1,6 +1,6 @@
 class API {
   static signin (user) {
-    return fetch('http://localhost:3001/api/v1/signin', {
+    return fetch('http://localhost:3000/api/v1/signin', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(user)
@@ -8,19 +8,20 @@ class API {
 
   }
   static validate() {
-    return this.get('http://localhost:3001/validate')
+    return this.get('http://localhost:3000/api/v1/validate')
   }
 
   static getOrderHistory() {
-    return this.get('http://localhost:3001/orderhistory')
+    return this.get('http://localhost:3000/api/v1/myaccount')
   }
 
-  static get(url) {
+  static get (url) {
     return fetch(url, {
       headers: {
+        'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('token')
       },
-    }).then(response => response.json())
+    }).then(resp => resp.json())
   }
 
 }
