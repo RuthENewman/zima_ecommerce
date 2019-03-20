@@ -10,6 +10,7 @@ import Cart from './Cart';
 import SignInForm from './SignInForm';
 import ProductsByTheme from './ProductsByTheme';
 import OrderHistory from './OrderHistory';
+import CreateAccount from './CreateAccount';
 
 class Main extends Component {
 
@@ -48,6 +49,7 @@ class Main extends Component {
         />} />
       <Route exact path="/myaccount"
       component={routerProps => <OrderHistory username={this.props.username} {...routerProps} />} />
+      <Route exact path="/createaccount" component={CreateAccount}/>
     </Fragment>
     )
   }

@@ -521,6 +521,33 @@ span.price {
   font-size: 1.2em;
 }
 
+#create_account_form {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 1.5em;
+  border-style: dotted;
+  border-radius: 5%;
+  text-align: center;
+}
+
+#firstNameInput, #lastNameInput, #emailInputCreateAccount, #PasswordCreateAccount {
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 1.5em;
+}
+
+#emailInputCreateAccount, #PasswordCreateAccount {
+  width: 98%;
+}
+
+#create_account_btn {
+  font-size: 1em;
+  padding: 0.8em;
+  border-radius: 5%;
+  background-color: #00FF7F;
+}
 
 #order-history {
   display: flex;
