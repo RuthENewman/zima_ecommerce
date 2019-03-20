@@ -12,13 +12,16 @@ class SignInForm extends Component {
   }
 
   handleSubmit = () => {
+    const { signin, history } = this.props
     const user = this.state
     API.signin(user)
       .then(data => {
         if (data.error) {
           alert('Wrong!')
         } else {
-          this.props.signin(data.email)
+          // event.preventDefault()
+          signin(data.email)
+          history.push('/orderhistory')
         }
       })
   }
@@ -33,21 +36,30 @@ class SignInForm extends Component {
   render() {
     return (
       <div>
+        <h2 className="category_eng"></h2>
         <form className="signin_form">
-          <p><label>Email address</label></p>
+          <p><label
+          className="category_eng"
+          id="email-label"
+          >Email address</label></p>
           <input
           id='emailInput'
           value={this.state.email}
           onChange={this.handleChange}
           margin='normal'
+          placeholder='Your email address'
           name='email'
           ></input>
-          <p><label>Password</label></p>
+          <p><label
+          className="category_eng"
+          id="password-label"
+          >Password</label></p>
           <input
           id='passwordInput'
           value={this.state.password}
           onChange={this.handleChange}
           margin='normal'
+          placeholder='Enter your password...'
           name='password'
           type='password'
           ></input>
@@ -55,6 +67,7 @@ class SignInForm extends Component {
           <button
           onClick={this.handleSubmit}
           type="submit"
+          id="login_button"
           className="cart_button"
           >Log in</button>
         </form>

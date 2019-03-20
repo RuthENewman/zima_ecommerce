@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 class About extends Component {
 
@@ -11,7 +12,7 @@ class About extends Component {
         </h1>
         <div id="about_summary">
           <p className="category_eng">
-          ZIMA ("Winter") is an e-commerce platform of gifts, souvenirs and other items designed and made in Russia, and that celebrate Russian cultural contributions and the beauty of the Russian landscape.
+          ZIMA ("Winter" in Russian) is an e-commerce platform of gifts, souvenirs and other items designed and made in Russia, and that celebrate Russian cultural contributions and the beauty of the Russian landscape.
           </p>
           <br/>
           <p className="category_eng">
@@ -23,7 +24,7 @@ class About extends Component {
           </p>
           <br/>
           <p className="category_eng">
-            Browse the full collection, or by theme.
+            Browse <Link to="/allproducts">the full collection</Link>, or <Link to="/allbytheme">by theme</Link>.
           </p>
         </div>
     </div>)

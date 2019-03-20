@@ -6,6 +6,8 @@ class Navbar extends Component {
 
 
   render() {
+    const { username } = this.props
+    const { signout } = this.props
     return (
       <header className="main_header">
         <div className="header_container">
@@ -16,13 +18,21 @@ class Navbar extends Component {
           <ul className="main_nav">
             <li className="category_eng"><Link to="/">Home</Link></li>
             <li className="category_eng"><Link to="/about">About</Link></li>
+            {
+              username !== ''
+              ?  <li className="category_eng"><Link to="/myaccount">My Account</Link></li>
+              : <li className="category_eng"><Link to="/createaccount">Create an account</Link></li>
+            }
+
+            {
+              username !== ''
+              ? <li className="category_eng" onClick={signout}><Link to="/">Log out</Link></li>
+              : <li className="category_eng"><Link to="/signin">Log in</Link></li>
+            }
             <li className="category_eng"><Link to="/allproducts">Browse All</Link></li>
             <li className="category_eng"><Link to="/allbytheme">Browse By Theme</Link></li>
             <li className="category_eng"><Link to="/shoppingcart">Shopping Cart</Link></li>
             <li className="category_eng"><Link to="/checkout">Checkout</Link></li>
-            <li className="category_eng"><Link to="/createaccount">Create an account</Link></li>
-            <li className="category_eng"><Link to="/signin">Log in</Link></li>
-            <li className="category_eng"><Link to="/myaccount">My Account</Link></li>
             <li className="category_rus"><Link to="/comingsoon">По-Русский</Link></li>
           </ul>
         </div>

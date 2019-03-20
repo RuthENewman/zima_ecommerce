@@ -9,6 +9,7 @@ import BrowsingByTheme from './BrowsingByTheme';
 import Cart from './Cart';
 import SignInForm from './SignInForm';
 import ProductsByTheme from './ProductsByTheme';
+import OrderHistory from './OrderHistory';
 
 class Main extends Component {
 
@@ -25,6 +26,7 @@ class Main extends Component {
         products={this.props.products}
         productsInCart={this.props.productsInCart}
         addToCart={this.props.addToCart}
+        shuffle={this.props.shuffle}
         />} />
       <Route exact path="/allbytheme"
         component={() => <BrowsingByTheme
@@ -42,6 +44,8 @@ class Main extends Component {
         productsInCart={this.props.productsInCart}
         removeFromCart={this.props.removeFromCart}
         />} />
+      <Route exact path="/myaccount"
+      component={routerProps => <OrderHistory username={this.props.username} {...routerProps} />} />
     </Fragment>
     )
   }

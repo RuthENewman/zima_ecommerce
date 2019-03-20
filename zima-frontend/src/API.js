@@ -7,9 +7,24 @@ class API {
     }).then(resp => resp.json())
 
   }
+  static validate() {
+    return this.get('http://localhost:3001/validate')
+  }
 
+  static getOrderHistory() {
+    return this.get('http://localhost:3001/orderhistory')
+  }
 
+  static get(url) {
+    return fetch(url, {
+      headers: {
+        'Authorization': localStorage.getItem('token')
+      },
+    }).then(response => response.json())
+  }
 
 }
+
+window.API = API;
 
 export default API;

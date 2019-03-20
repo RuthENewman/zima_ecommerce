@@ -493,13 +493,40 @@ span.price {
   font-size: 1em;
   border-style: dotted;
   border-radius: 5%;
+  position: relative;
 }
 
 #emailInput, #passwordInput {
   margin: 1em;
   margin-bottom: 2em;
   padding: 0.5em;
+  width: 96%;
+  position: relative;
+  text-align: center;
+}
+
+#login_button {
+  width: 40%;
+  position: relative;
+  margin: 0 auto;
+  margin-left: 30%;
+  background-color: #00FF7F;
+}
+
+#password-label, #email-label {
+  position: relative;
   width: 100%;
+  text-align: center;
+  margin-top: 0.3em;
+  font-size: 1.2em;
+}
+
+
+#order-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 

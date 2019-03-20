@@ -10,6 +10,7 @@ class ProductsContainer extends Component {
       <div className="product-container">
         <h2 id="all-products-heading">All products</h2>
         <ProductsList
+          shuffle={this.props.shuffle}
           products={this.props.products}
           addToCart={this.props.addToCart}
           productsInCart={this.props.productsInCart}
