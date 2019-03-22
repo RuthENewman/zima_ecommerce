@@ -17,6 +17,7 @@ class ProductsContainer extends Component {
           />
         <Cart
           productsInCart={this.props.productsInCart}
+          removeFromCart={this.props.removeFromCart}
         />
       </div>
     )

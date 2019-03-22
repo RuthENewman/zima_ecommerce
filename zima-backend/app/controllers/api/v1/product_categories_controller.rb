@@ -1,6 +1,5 @@
 class Api::V1::ProductCategoriesController < ApplicationController
-before_action
-
+before_action :set_product_categories, only: [:show, :destroy, :edit, :update]
 
   def index
     @product_categories = ProductCategory.all
@@ -37,6 +36,15 @@ before_action
       else
         render json: {error: @product_category.errors.full_messages }, status: :unprocessible_entity
       end
+  end
+
+  def destroy
+    if @product_category
+      @product_category.destroy
+      render json: {message: 'Product category deleted.'}
+    else
+      render json: {error: 'Product category not found.'}
+    end
   end
 
   private

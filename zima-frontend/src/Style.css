@@ -58,19 +58,20 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  position: relative;
   width: 98%;
   margin: 0 auto;
+  align-content: center;
 }
 
 .product-item {
-  margin: 2%;
   padding: 1em;
   border-style: solid;
   border-width: 0.1em;
   width: 300px;
   position: relative;
   border-radius: 5%;
+  margin: 0 auto;
+  margin-top: 1em;
 }
 
 .product-item img {
@@ -87,6 +88,24 @@ a {
   padding: 0.4em;
   border-radius: 5%;
   margin: 0.4em;
+}
+
+#visa-logo {
+  color: navy;
+  width: 10%;
+  margin: 1%;
+}
+
+#mastercard-logo {
+  color: red;
+  width: 10%;
+  margin: 1%;
+}
+
+#amex-logo {
+  color: blue;
+  width: 10%;
+  margin: 1%;
 }
 
 .shopping-cart {
@@ -132,7 +151,7 @@ h3#shopping-cart-header {
   display: block;
 }
 
-/* I want this in media section only but not working currently */
+
 .name, .main_nav li {
   text-align: center;
   background-color: black;
@@ -149,7 +168,7 @@ h3#shopping-cart-header {
 
 .main_content {
   width: 100%;
-  min-height: 600px;
+  min-height: 200px;
   max-height: 1400px;
   margin: 0 auto;
   padding-left: 1em;
@@ -230,20 +249,19 @@ h3#shopping-cart-header {
 
 .product_overlay {
   position: absolute;
-  top: 0;
+  top: -1;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 250px;
-  width: 250px;
+  right: 1;
+  height: 100%;
+  width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #008CBA;
+  background-color: #000000;
   border-radius: 4%;
-  margin: 2%;
 }
 
- .product-item:hover .product-overlay {
+ .product-item:hover .product_overlay {
    opacity: 1;
  }
 
@@ -266,6 +284,20 @@ h3#shopping-cart-header {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.product-text {
+  color: white;
+  font-size: 1em;
+  position: relative;
+  width: 90%;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 2em;
 }
 
 .bg-text {
@@ -563,7 +595,6 @@ span.price {
   padding: 1.5em;
 }
 
-
 /* // Side Nav Bar */
 
 .sidenav {
@@ -639,7 +670,7 @@ span.price {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 
-  .image, .overlay_type_1, .overlay_type_2 {
+  .image, .overlay_type_1, .overlay_type_2, .product_overlay {
     margin: 5%;
   }
 }

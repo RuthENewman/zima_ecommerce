@@ -11,6 +11,7 @@ import SignInForm from './SignInForm';
 import ProductsByTheme from './ProductsByTheme';
 import OrderHistory from './OrderHistory';
 import CreateAccount from './CreateAccount';
+import CompleteOrder from './CompleteOrder';
 
 class Main extends Component {
 
@@ -28,6 +29,7 @@ class Main extends Component {
         productsInCart={this.props.productsInCart}
         addToCart={this.props.addToCart}
         shuffle={this.props.shuffle}
+        removeFromCart={this.props.removeFromCart}
         />} />
       <Route exact path="/allbytheme"
         component={() => <BrowsingByTheme
@@ -50,6 +52,11 @@ class Main extends Component {
       <Route exact path="/myaccount"
       component={routerProps => <OrderHistory username={this.props.username} {...routerProps} />} />
       <Route exact path="/createaccount" component={CreateAccount}/>
+      <Route exact path="/completeorder" component={() =>
+        <CompleteOrder
+        productsInCart={this.props.productsInCart}
+        removeFromCart={this.props.removeFromCart}
+        />} />
     </Fragment>
     )
   }

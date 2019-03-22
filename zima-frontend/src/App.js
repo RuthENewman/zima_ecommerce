@@ -12,14 +12,15 @@ const productsURL = "http://localhost:3000/api/v1/products";
 
 
 class App extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       products: [],
       productsInCart: [],
       selectedCategory: null,
       username: '',
+      currentUser: {},
     }
 
   }
@@ -75,7 +76,7 @@ class App extends Component {
 
   }
 
-  addToCart = product => {
+  addToCart = (product) => {
     this.setState({
       productsInCart: [...this.state.productsInCart, product]
     })

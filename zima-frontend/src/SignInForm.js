@@ -18,7 +18,7 @@ class SignInForm extends Component {
     API.signin(user)
       .then(data => {
         if (data.error) {
-          alert('Wrong!')
+          alert('Incorrect email or password. Please try again or create an account.')
         } else {
 
           signin(data)
@@ -37,7 +37,7 @@ class SignInForm extends Component {
   render() {
     return (
       <div>
-        <h2 className="category_eng"></h2>
+        <h2 className="category_eng">Log in to your account</h2>
         <form className="signin_form">
           <p><label
           className="category_eng"

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import BrowseAll from './BrowseAll';
+import CompleteOrder from './CompleteOrder';
 
 class Cart extends Component {
   constructor() {
@@ -59,7 +60,9 @@ class Cart extends Component {
 
         {
           this.state.cartSize >= 1
-          ? <button className="category_eng cart_button">Go to checkout</button>
+          ? <button
+          className="category_eng cart_button"
+          ><Link to="/completeorder" component={CompleteOrder}>Go to checkout</Link></button>
           : <button className="category_eng cart_button"><Link to="/allproducts" component={BrowseAll}>View products</Link></button>
         }
 

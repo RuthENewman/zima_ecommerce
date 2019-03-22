@@ -15,6 +15,7 @@ class BrowseAll extends Component {
       <Fragment>
         <ProductsContainer
           addToCart={this.props.addToCart}
+          removeFromCart={this.props.removeFromCart}
           shuffle={this.props.shuffle}
           products={this.props.products}
           productsInCart={this.props.productsInCart}
