@@ -5,10 +5,10 @@ class BrowsingByTheme extends Component {
 
   render() {
     return (
-    <div className="main_content">
+    <div className="theme">
       <h2 className="category_eng">Browse by theme</h2>
         <div id="icons_container">
-            <div className="container">
+            <div className="theme_icon">
               <img
                 src="https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/noun_suprematism_2209256.png"
                 alt="Avatar"
@@ -26,7 +26,7 @@ class BrowsingByTheme extends Component {
               </Link>
             </div>
 
-            <div className="container">
+            <div className="theme_icon">
               <img
                 src="https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/noun_theatre_1628803.png"
                 alt="Avatar"
@@ -44,7 +44,7 @@ class BrowsingByTheme extends Component {
               </Link>
             </div>
 
-            <div className="container">
+            <div className="theme_icon">
               <img
                 src="https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/noun_literature_2042388.png"
                 alt="Avatar"
@@ -62,7 +62,7 @@ class BrowsingByTheme extends Component {
               </Link>
             </div>
 
-            <div className="container">
+            <div className="theme_icon">
               <img
                 src="https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/noun_accordion_330237.png"
                 alt="Avatar"
@@ -80,7 +80,7 @@ class BrowsingByTheme extends Component {
               </Link>
             </div>
 
-            <div className="container">
+            <div className="theme_icon">
               <img
                 src="https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/noun_spaceman_2212791.png"
                 alt="Avatar"
@@ -98,7 +98,7 @@ class BrowsingByTheme extends Component {
                 </Link>
             </div>
 
-            <div className="container">
+            <div className="theme_icon">
               <img
                   src="https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/noun_ballerina_330245+(1).png"
                   alt="Avatar"
@@ -115,7 +115,7 @@ class BrowsingByTheme extends Component {
                 </Link>
             </div>
 
-            <div className="container">
+            <div className="theme_icon">
               <img
                   src="https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/noun_Snowflake_1986791.png"
                   alt="Avatar"
@@ -132,7 +132,7 @@ class BrowsingByTheme extends Component {
               </Link>
             </div>
 
-            <div className="container">
+            <div className="theme_icon">
               <img
                   src="https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/noun_Samovar_330246.png"
                   alt="Avatar"
@@ -150,7 +150,7 @@ class BrowsingByTheme extends Component {
                </Link>
             </div>
 
-            <div className="container">
+            <div className="theme_icon">
               <img
                 src="https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/noun_matrioshka_330268.png"
                 alt="Avatar"
@@ -167,7 +167,7 @@ class BrowsingByTheme extends Component {
               </Link>
             </div>
 
-            <div className="container">
+            <div className="theme_icon">
               <img
                 src="https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/noun_Ice_Skate_1410015.png"
                 alt="Avatar"
@@ -184,7 +184,7 @@ class BrowsingByTheme extends Component {
               </Link>
             </div>
 
-            <div className="container">
+            <div className="theme_icon">
               <img
                 src="https://s3.eu-west-2.amazonaws.com/zimaproducts/categoryicons/noun_birch_330314.png"
                 alt="Avatar"

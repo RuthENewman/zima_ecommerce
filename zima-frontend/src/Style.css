@@ -90,6 +90,12 @@ a {
   margin: 0.4em;
 }
 
+.theme_container {
+  position: relative;
+  width: 96%;
+  margin: 0 auto;
+}
+
 #visa-logo {
   color: navy;
   width: 10%;
@@ -203,12 +209,18 @@ h3#shopping-cart-header {
   padding-top: 0.5em;
 }
 
-.container {
-  width: 200px;
-  height: 200px;
-  margin: 4%;
+.theme_icon {
+  padding: 0.2em;
+  width: 250px;
   position: relative;
+  margin: 0 auto;
+  margin-top: 1em;
 }
+.theme_icon img {
+  width: 100%;
+  margin: 0;
+}
+
 
 .image {
   display: block;
@@ -219,35 +231,20 @@ h3#shopping-cart-header {
 
 .overlay_type_1 {
   position: absolute;
-  top: 0;
+  top: -1;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 250px;
-  width: 250px;
+  right: 1;
+  height: 100%;
+  width: 100%;
   opacity: 0;
   transition: .5s ease;
   background-color: #008CBA;
   border-radius: 4%;
-  margin: 2%;
+  margin: 0;
 }
 
 .overlay_type_2 {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 250px;
-  width: 250px;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #000000;
-  border-radius: 4%;
-  margin: 2%;
-}
-
-.product_overlay {
   position: absolute;
   top: -1;
   bottom: 0;
@@ -257,19 +254,35 @@ h3#shopping-cart-header {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
+  background-color: #008CBA;
+  border-radius: 4%;
+  margin: 0;
+}
+
+.product_overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
   background-color: #000000;
   border-radius: 4%;
+  margin: 0;
 }
 
  .product-item:hover .product_overlay {
    opacity: 1;
  }
 
-.container:hover .overlay_type_1 {
+.theme_icon:hover .overlay_type_1 {
   opacity: 1;
 }
 
-.container:hover .overlay_type_2 {
+.theme_icon:hover .overlay_type_2 {
   opacity: 1;
 }
 
@@ -470,12 +483,14 @@ span.price {
 }
 
 #icons_container {
-  position: relative;
-  width: 96%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+width: 98%;
+margin: 0 auto;
+align-content: center;
+padding: 1em;
+margin: 1em;
 }
 
 #about_header {
