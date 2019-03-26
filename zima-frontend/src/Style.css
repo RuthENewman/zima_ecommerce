@@ -412,7 +412,7 @@ h3#shopping-cart-header {
   padding: 5px 20px 15px 20px;
   border-radius: 3px;
   margin: 0 auto;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 2em;
   width: 50%;
 }
@@ -442,14 +442,21 @@ label {
   background-color: #4CAF50;
   color: white;
   padding: 12px;
-  margin: 10px 0;
   border: none;
-  width: 100%;
+  position: relative;
+  width: 30%;
+  margin: 0 auto;
   border-radius: 3px;
   cursor: pointer;
   font-size: 1.1em;
   font-family: 'Roboto', sans-serif;
 }
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  margin: 0.1em;
+ }
 
 .btn:hover {
   background-color: #45a049;
@@ -622,6 +629,7 @@ margin: 1em;
 
 #payment_container {
   width: 100%;
+  margin-top: 0;
 }
 
 #payment_form {
@@ -635,7 +643,7 @@ margin: 1em;
   font-size: 1em;
   font-family: 'Roboto', sans-serif;
   padding: 5px 20px 15px 20px;
-  line-height: 3em;
+  line-height: 2em;
   border: 1px solid lightgrey;
   border-radius: 3px;
   background-color: #f2f2f2;
@@ -643,7 +651,7 @@ margin: 1em;
 }
 
 .CC-payment input {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .CC-payment p {
@@ -651,7 +659,13 @@ margin: 1em;
 }
 
 .payment_details {
-  padding: 5px 20px 15px 20px;
+  padding: 5px 20px 0px 20px;
+  font-size: 1em;
+  line-height: 3em;
+}
+
+.payment_details input {
+
 }
 
 .CC-payment button {
@@ -677,6 +691,13 @@ margin: 1em;
   transition: 0.5s;
 }
 
+.CardField-number .CardField-number-fakeNumber, .CardField-number input {
+  font-size: 1.2em;
+}
+
+.ElementsApp input {
+  font-size: 1em;
+}
 
 .sidenav a {
   padding: 8px 8px 8px 20px;

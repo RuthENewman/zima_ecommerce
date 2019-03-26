@@ -24,12 +24,12 @@ class CheckoutForm extends Component {
 
     return (
       <div className="checkout">
-        <PaymentForm />
         <div className="payment_details">
           <p>Please enter your credit card details</p>
           <CardElement />
-          <button onClick={this.submit}>Send</button>
+          <button className="category_eng btn" type="submit" onClick={this.submit}>Complete order</button>
         </div>
+          <PaymentForm />
       </div>
     )
   }

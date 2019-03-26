@@ -1,12 +1,19 @@
 import React, {Component} from 'react';
+import ShippingAddress from './ShippingAddress';
 
 class PaymentForm extends Component {
   constructor() {
     super()
 
     this.state = {
-
+      showShippingAddress: true,
     }
+  }
+
+  handleCheckbox = (event) => {
+    this.setState({
+      showShippingAddress: !this.state.showShippingAddress
+    })
   }
 
   render() {
@@ -14,7 +21,14 @@ class PaymentForm extends Component {
       <div>
         <div className="checkout_container" id="payment_container">
           <form id="payment_form" onChange={this.handleSubmit}>
-
+            <div>
+              <p className="category_eng">Accepted Cards</p>
+              <div className="checkout-icon-container">
+                <i id="visa-logo" className="fab fa-cc-visa"></i>
+                <i id="amex-logo" className="fab fa-cc-amex"></i>
+                <i id="mastercard-logo" className="fab fa-cc-mastercard"></i>
+              </div>
+            </div>
             <div>
                 <h3 className="category_eng">Billing Address</h3>
                 <label for="fname">Full Name</label>
@@ -41,20 +55,19 @@ class PaymentForm extends Component {
             </div>
 
               <div>
-                <p className="category_eng">Accepted Cards</p>
-                <div className="checkout-icon-container">
-                  <i id="visa-logo" className="fab fa-cc-visa"></i>
-                  <i id="amex-logo" className="fab fa-cc-amex"></i>
-                  <i id="mastercard-logo" className="fab fa-cc-mastercard"></i>
-                </div>
-              </div>
-
-              <div>
                 <label>
-                  <input type="checkbox" checked="checked" name="sameadr"></input> Shipping address same as billing
+                  <input
+                  type="checkbox"
+                  name="sameadr"
+                  onClick={this.handleCheckbox}
+                  ></input> Shipping address same as billing
                 </label>
-                  <input className="category_eng btn" type="submit" value="Complete order"></input>
+
               </div>
+              { this.state.showShippingAddress
+                ? <ShippingAddress />
+                : <br/>
+              }
           </form>
         </div>
       </div>
