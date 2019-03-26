@@ -168,7 +168,7 @@ h3#shopping-cart-header {
 
 .main_header {
   background-color: #000000;
-  padding: 1em, 0;
+  padding: 0.2em;
 }
 
 
@@ -464,6 +464,17 @@ label {
 span.price {
   float: right;
   color: grey;
+}
+
+#quantityLabel {
+  font-size: 0.7em;
+}
+
+#quantityInput {
+  font-size: 0.8em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  width: 10%;
 }
 
 .centre_text {

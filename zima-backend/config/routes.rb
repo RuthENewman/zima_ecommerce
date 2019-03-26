@@ -10,7 +10,8 @@ Rails.application.routes.draw do
       get 'validate', to: 'users#validate'
       get 'myaccount', to: 'users#get_order_history'
       resources :orders
-      resources :order_items
+      get '/shoppingcart', to: 'order_items#index'
+      resources :order_items, path: '/shoppingcart/items'
     end
   end
 end

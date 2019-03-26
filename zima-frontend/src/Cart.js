@@ -9,9 +9,26 @@ class Cart extends Component {
 
     this.state = {
       cartStatus: "empty",
+      shoppingCartProducts: []
     }
 
   }
+
+    setProductsInCart = () => {
+      this.setState({
+        shoppingCartProducts: this.props.productsInCart
+      })
+    }
+
+    setCartSize = () => {
+      this.props.productsInCart.length >= 1
+        ? this.setState({
+          cartSize: this.props.productsInCart.length,
+        })
+      : this.setState({
+        cartSize: 0,
+      })
+    }
 
   totalPrice = () => {
     let totalPriceOfCart = 0;
@@ -21,14 +38,10 @@ class Cart extends Component {
     return parseFloat(totalPriceOfCart.toFixed(2));
   }
 
+
   componentDidMount() {
-    this.props.productsInCart.length >= 1
-      ? this.setState({
-        cartSize: this.props.productsInCart.length,
-      })
-    : this.setState({
-      cartSize: 0,
-    })
+    this.setProductsInCart()
+    this.setCartSize()
   }
 
   render() {
@@ -48,6 +61,9 @@ class Cart extends Component {
             product =>
           (<div>
             <h3 className="category_eng">{product.name} <span className="price">£{product.price}</span>
+            <br/>
+            <label id="quantityLabel" className="category_eng">Quantity:</label>
+            <input id="quantityInput" type="number" name="quantity" min="1" value="1"></input>
             <button className="category_eng remove_button" onClick={() => this.props.removeFromCart(product)}>Remove from cart</button></h3>
           </div>)
           )
