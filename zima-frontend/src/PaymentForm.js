@@ -1,0 +1,67 @@
+import React, {Component} from 'react';
+
+class PaymentForm extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="checkout_container" id="payment_container">
+          <form id="payment_form" onChange={this.handleSubmit}>
+
+            <div>
+                <h3 className="category_eng">Billing Address</h3>
+                <label for="fname">Full Name</label>
+                <input type="text" className="category_eng" id="fname" name="firstname" placeholder="Your name"></input>
+                <label for="email">Email</label>
+                <input type="text" id="email" className="category_eng" name="email" placeholder="Your email"></input>
+                <label for="adr"><i className="fa fa-address-card-o category_eng"></i> Address</label>
+                <input type="text" id="adr" className="category_eng" name="address" placeholder="Your address"></input>
+                <label for="city"><i className="fa fa-institution category_eng"></i> City</label>
+                <input type="text" id="city" className="category_eng" name="city" placeholder="e.g. Moscow"></input>
+
+                <div>
+                  <div className="category_eng">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" placeholder="e.g. Russia"></input>
+                  </div>
+
+                  <div>
+                    <label for="zip">Zip or Post code</label>
+                    <input type="text" id="post_code" name="post_code" placeholder="Your Post or Zip code"></input>
+                  </div>
+
+                </div>
+            </div>
+
+              <div>
+                <p className="category_eng">Accepted Cards</p>
+                <div className="checkout-icon-container">
+                  <i id="visa-logo" className="fab fa-cc-visa"></i>
+                  <i id="amex-logo" className="fab fa-cc-amex"></i>
+                  <i id="mastercard-logo" className="fab fa-cc-mastercard"></i>
+                </div>
+              </div>
+
+              <div>
+                <label>
+                  <input type="checkbox" checked="checked" name="sameadr"></input> Shipping address same as billing
+                </label>
+                  <input className="category_eng btn" type="submit" value="Complete order"></input>
+              </div>
+          </form>
+        </div>
+      </div>
+    )
+  }
+
+
+}
+
+export default PaymentForm;

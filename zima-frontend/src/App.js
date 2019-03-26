@@ -8,6 +8,7 @@ import Sidebar from './Sidebar';
 import Main from './Main';
 import API from './API';
 
+
 const productsURL = "http://localhost:3000/api/v1/products";
 
 
@@ -103,7 +104,6 @@ class App extends Component {
 
   render() {
     return (
-
       <BrowserRouter>
         <Sidebar />
         <Navbar
