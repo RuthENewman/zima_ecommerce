@@ -8,8 +8,8 @@ class Cart extends Component {
     super()
 
     this.state = {
-      cartStatus: "empty",
-      shoppingCartProducts: []
+      shoppingCartProducts: [],
+      cartProductsWithQuantities: [],
     }
 
   }
@@ -30,14 +30,27 @@ class Cart extends Component {
       })
     }
 
-  totalPrice = () => {
-    let totalPriceOfCart = 0;
-    this.props.productsInCart.map(
-      product => totalPriceOfCart += parseFloat(product.price)
-    )
-    return parseFloat(totalPriceOfCart.toFixed(2));
-  }
+    priceTimesQuantity = () => {
 
+    }
+
+    totalPrice = () => {
+      let totalPriceOfCart = 0;
+      this.props.productsInCart.map(
+        product => totalPriceOfCart += parseFloat(product.price)
+      )
+      return parseFloat(totalPriceOfCart.toFixed(2));
+    }
+
+    incrementQuantity = (selectedProduct) => {
+      this.setState({
+        cartProductsWithQuantities: this.state.shoppingCartProducts.map(product =>
+          product.id === selectedProduct.id && product.quantity != null
+          ?  product.quantity += 1
+          :  product.quantity = 1
+        )
+      })
+    }
 
   componentDidMount() {
     this.setProductsInCart()
@@ -63,7 +76,7 @@ class Cart extends Component {
             <h3 className="category_eng">{product.name} <span className="price">£{product.price}</span>
             <br/>
             <label id="quantityLabel" className="category_eng">Quantity:</label>
-            <input id="quantityInput" type="number" name="quantity" min="1" value="1"></input>
+            <input id="quantityInput" type="number" name="quantity" min="1" onClick={() => this.incrementQuantity(product)}></input>
             <button className="category_eng remove_button" onClick={() => this.props.removeFromCart(product)}>Remove from cart</button></h3>
           </div>)
           )

@@ -5,14 +5,27 @@ class Order extends Component {
     super()
 
     this.state = {
-
+      order: {}
     }
+  }
+
+  selectOrder = order => {
+    this.setState({
+      order: order
+    })
+  }
+
+  componentDidMount() {
+    this.selectOrder(this.props.order)
   }
 
   render() {
     return (
       <div>
-        <h2>This is an order</h2>
+        <h2>Order</h2>
+        {
+          this.state.order
+        }
       </div>
     )
   }

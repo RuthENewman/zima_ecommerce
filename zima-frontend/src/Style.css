@@ -472,8 +472,29 @@ span.price {
   color: grey;
 }
 
+#count {
+  width: 15%;
+  font-size: 0.9em;
+  margin-right: 0.5em;
+  padding: 0.4em;
+  text-align: center;
+}
+
+#plus {
+  font-size: 1em;
+  width: 5%;
+}
+
+#minus {
+  font-size: 1em;
+  width: 5%;
+  margin: 0.2em;
+}
+
 #quantityLabel {
-  font-size: 0.7em;
+  font-size: 0.9em;
+  margin-right: 0.5em;
+  margin-top: 1em;
 }
 
 #quantityInput {

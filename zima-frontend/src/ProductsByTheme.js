@@ -28,8 +28,15 @@ class ProductsByTheme extends Component {
     })
   }
 
+  defaultToAllProducts = () =>
+  this.setState({
+    selectedProducts: this.props.products
+  })
+
   componentDidMount() {
-    this.fetchProductsByTheme(this.props.selectedCategory)
+    this.props.selectedCategory !== null
+    ? this.fetchProductsByTheme(this.props.selectedCategory)
+    : this.defaultToAllProducts()
   }
 
   render() {

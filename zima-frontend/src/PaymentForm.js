@@ -16,6 +16,8 @@ class PaymentForm extends Component {
     })
   }
 
+
+
   render() {
     return (
       <div>
@@ -68,6 +70,8 @@ class PaymentForm extends Component {
                 ? <ShippingAddress />
                 : <br/>
               }
+              <input onClick={this.props.handleOrderSubmit} className="category_eng btn" type="submit" value="Complete order"></input>
+
           </form>
         </div>
       </div>

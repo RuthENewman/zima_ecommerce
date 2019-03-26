@@ -29,7 +29,7 @@ class CheckoutForm extends Component {
           <CardElement />
           <button className="category_eng btn" type="submit" onClick={this.submit}>Complete order</button>
         </div>
-          <PaymentForm />
+          <PaymentForm handleOrderSubmit={this.props.handleOrderSubmit}/>
       </div>
     )
   }

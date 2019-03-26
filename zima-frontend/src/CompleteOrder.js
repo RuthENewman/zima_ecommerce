@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Cart from './Cart';
 import { Elements, StripeProvider } from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
-import PaymentForm from './PaymentForm';
+const orderUrl = "http://localhost:3000/api/v1/orders";
 
 class CompleteOrder extends Component {
  constructor() {
@@ -20,6 +20,19 @@ class CompleteOrder extends Component {
    }).then(response => response.json())
  }
 
+ handleOrderSubmit = event => {
+   event.preventDefault()
+
+   return fetch(orderUrl, {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json',
+       'Authorization': localStorage.getItem('token')
+     },
+     body: JSON.stringify({ products: this.props.productsInCart })
+   })
+ }
+
   render() {
     return(
     <StripeProvider apiKey="pk_test_aQk1i0LvsEwnjnl3iG4SbKbZ00Vpway7rg">
@@ -30,7 +43,7 @@ class CompleteOrder extends Component {
         />
       <div className="CC-payment">
         <Elements>
-            <CheckoutForm />
+            <CheckoutForm handleOrderSubmit={this.handleOrderSubmit} />
         </Elements>
 
       </div>

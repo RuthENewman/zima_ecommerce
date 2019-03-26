@@ -6,13 +6,13 @@ class ApplicationController < ActionController::API
 
    def get_current_user
      id = decoded_token['id']
-     User.find_by(id: id)
+     User.find(id)
    end
 
    def decoded_token
      token = request.headers['Authorization']
      begin
-       JWT.decode(token, secret).first
+       JWT.decode(token, secret, true).first
      rescue JWT::DecodeError
        {}
      end

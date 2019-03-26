@@ -35,7 +35,7 @@ class OrderHistory extends Component {
           <ul>
             {
               this.state.orders > 0
-              ? this.state.orders.map(order => <li>Your order</li>)
+              ? this.state.orders.map(order => <Order order={order}/>)
               : <p className="category_eng">You haven't ordered anything yet!</p>
             }
           </ul>

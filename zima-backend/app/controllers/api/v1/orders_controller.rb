@@ -15,8 +15,14 @@ class Api::V1::OrdersController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:order][:user_id])
-    @order = @user.order.create!(order_params)
+    @user = get_current_user
+    @order = Order.create(user_id: @user.id)
+
+    params[:products].each do |product|
+      @oi = OrderItem.create(order: @order, product_id: product['id'], quantity: 1, price: product['price'])
+      byebug
+    end
+
     if @order.valid?
       render json: @order
     else

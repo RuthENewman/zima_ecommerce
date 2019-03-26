@@ -3,7 +3,6 @@ import {
   BrowserRouter,
 } from 'react-router-dom';
 import Navbar from './Navbar';
-import ZimaFooter from './ZimaFooter';
 import Sidebar from './Sidebar';
 import Main from './Main';
 import API from './API';
@@ -81,7 +80,8 @@ class App extends Component {
     this.setState({
       productsInCart: [...this.state.productsInCart, product]
     })
-    alert('Product added to cart!')
+    alert('Product added to cart!');
+    return false;
   }
 
   removeFromCart = product => {

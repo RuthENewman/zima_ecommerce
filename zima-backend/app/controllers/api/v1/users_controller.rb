@@ -41,7 +41,7 @@ class Api::V1::UsersController < ApplicationController
   def signin
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
-      render json: {first_name: @user.first_name, email: @user.email, token: issue_token(@user.id)}
+      render json: {first_name: @user.first_name, email: @user.email, token: issue_token({id: @user.id})}
     else
       render json: {error: 'Email and/or password invalid'}, status: 401
     end
