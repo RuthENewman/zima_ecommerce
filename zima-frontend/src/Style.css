@@ -183,6 +183,21 @@ h3#shopping-cart-header {
   margin-right: -1.5em;
 }
 
+.order-details {
+  border-style: dotted;
+  padding: 1em;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+.order-item-details {
+  padding: 0.5em;
+}
+
+.order-history-image {
+  height: 150px;
+}
 
 .main_content {
   width: 100%;

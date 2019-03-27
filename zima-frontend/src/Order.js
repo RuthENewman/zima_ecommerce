@@ -11,7 +11,7 @@ class Order extends Component {
 
   render() {
     return (
-      <div>
+      <div className="order-details">
         <h3>Order</h3>
         <ul>
         { (this.props.order.products.length > 0)
