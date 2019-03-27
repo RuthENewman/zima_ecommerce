@@ -11,8 +11,9 @@ class OrderItem extends Component {
 
   render() {
     return (
-      <div>
-        <p>{this.props.orderItem.name}</p>
+      <div className="order-item-details">
+        <p><span>{this.props.product.name}</span><span>{this.props.product.price}</span></p>
+        <img src={this.props.product.img_url} alt={this.props.product.name}/>
       </div>
     )
   }

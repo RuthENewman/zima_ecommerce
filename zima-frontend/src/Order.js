@@ -9,25 +9,17 @@ class Order extends Component {
     }
   }
 
-  selectOrder = order => {
-    this.setState({
-      order: order
-    })
-  }
-
-  componentDidMount() {
-    this.selectOrder(this.props.order)
-  }
-
   render() {
     return (
       <div>
         <h3>Order</h3>
-        <ul>{
-          this.state.order.order_items.map(orderItem =>
-          <li>{orderItem.name}</li>)
-
-        }</ul>
+        <ul>
+        { (this.props.order.products.length > 0)
+          ? this.props.order.products.map(product =>
+            <OrderItem key={product.id} order={this.props.order} product={product}/>)
+          : <br/>
+        }
+        </ul>
       </div>
     )
   }

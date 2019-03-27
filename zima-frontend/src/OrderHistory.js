@@ -41,14 +41,19 @@ class OrderHistory extends Component {
           id="view-order-history"
           onClick={this.showOrderHistory}
           >View my order history</button>
-          {this.state.orders.length > 0
+          { this.state.showOrderHistoryDetails
+            ? <hr/>
+            : <br/>
+          }
+          { this.state.orders.length > 0
                 ? this.state.orders.map(order => <Order order={order} key={order.id}/>)
                 : <p className="category_eng">You haven't ordered anything yet!</p>
-              }
+            }
       </div>
     )
   }
+  }
 
-}
+
 
 export default OrderHistory;
