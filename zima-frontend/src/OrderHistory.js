@@ -7,6 +7,7 @@ class OrderHistory extends Component {
     super()
 
     this.state = {
+      showOrderHistoryDetails: false,
       orders: []
     }
   }
@@ -15,6 +16,12 @@ class OrderHistory extends Component {
     API.getOrderHistory().then(orders => this.setState({
       orders: orders
     }));
+  }
+
+  showOrderHistory = () => {
+    this.setState({
+      showOrderHistoryDetails: true
+    })
   }
 
   componentDidMount() {
@@ -29,15 +36,15 @@ class OrderHistory extends Component {
   render() {
     return(
       <div id="order-history" className="user-list">
-        <h3 className="category_eng">Hi {this.props.username}!</h3>
-        <h3 className="category_eng">Your order history: </h3>
-          <ul>
-            {
-              this.state.orders > 0
-              ? this.state.orders.map(order => <Order order={order}/>)
-              : <p className="category_eng">You haven't ordered anything yet!</p>
-            }
-          </ul>
+          <h3 className="category_eng">Hi {this.props.username}!</h3>
+          <button
+          id="view-order-history"
+          onClick={this.showOrderHistory}
+          >View my order history</button>
+          {this.state.showOrderHistoryDetails && this.state.orders.length > 0
+                ? this.state.orders.map(order => <Order order={order} key={order.id}/>)
+                : <p className="category_eng">You haven't ordered anything yet!</p>
+              }
       </div>
     )
   }

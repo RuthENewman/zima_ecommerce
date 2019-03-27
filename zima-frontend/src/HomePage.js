@@ -16,7 +16,7 @@ class HomePage extends Component {
 
       <div id="home-page-div">
           {
-            this.props.sideBar == true
+            this.props.sideBar === true
             ?  <Sidebar closeSideBar={this.props.closeSideBar} sideBar={this.props.sideBar} />
             : null
           }

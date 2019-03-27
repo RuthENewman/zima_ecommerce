@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import OrderItem from './OrderItem';
 
 class Order extends Component {
   constructor() {
     super()
 
     this.state = {
-      order: {}
     }
   }
 
@@ -22,10 +22,12 @@ class Order extends Component {
   render() {
     return (
       <div>
-        <h2>Order</h2>
-        {
-          this.state.order
-        }
+        <h3>Order</h3>
+        <ul>{
+          this.state.order.order_items.map(orderItem =>
+          <li>{orderItem.name}</li>)
+
+        }</ul>
       </div>
     )
   }

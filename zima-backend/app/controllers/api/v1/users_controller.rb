@@ -59,7 +59,7 @@ class Api::V1::UsersController < ApplicationController
   def get_order_history
     @user = get_current_user
     if @user
-      render json: @user.orders
+      render json: @user.orders, each_serializer: OrderSerializer
     else
       render json: {error: 'Not a valid user'}, status: 401
     end

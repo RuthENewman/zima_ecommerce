@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter,
+  withRouter
 } from 'react-router-dom';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
@@ -117,7 +117,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <>
         <Navbar
         username={this.state.username}
         signout={this.signout}
@@ -137,10 +137,9 @@ class App extends Component {
           closeSideBar={this.closeSideBar}
           sideBar={this.state.sideBar}
           />
-
-      </BrowserRouter>
+        </>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
