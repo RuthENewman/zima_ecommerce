@@ -7,7 +7,6 @@ class OrderHistory extends Component {
     super()
 
     this.state = {
-      showOrderHistoryDetails: false,
       orders: []
     }
   }
@@ -18,11 +17,6 @@ class OrderHistory extends Component {
     }));
   }
 
-  showOrderHistory = () => {
-    this.setState({
-      showOrderHistoryDetails: true
-    })
-  }
 
   componentDidMount() {
     const { history, username } = this.props
@@ -37,10 +31,6 @@ class OrderHistory extends Component {
     return(
       <div id="order-history" className="user-list">
           <h3 className="category_eng">Hi {this.props.username}!</h3>
-          <button
-          id="view-order-history"
-          onClick={this.showOrderHistory}
-          >View my order history</button>
           { this.state.showOrderHistoryDetails
             ? <hr/>
             : <br/>

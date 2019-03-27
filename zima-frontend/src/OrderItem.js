@@ -12,7 +12,11 @@ class OrderItem extends Component {
   render() {
     return (
       <div className="order-item-details">
-        <p className="category_eng"><span>{this.props.product.name}</span><span>{this.props.product.price}</span></p>
+        <h3>Order id: {this.props.order.id}<span> Date ordered:</span></h3>
+        <div className="category_eng order-item-info">
+          <p>{this.props.product.name}</p>
+          <p>£{this.props.product.price}</p>
+        </div>
         <img className="order-history-image" src={this.props.product.image_url} alt={this.props.product.name}/>
       </div>
     )

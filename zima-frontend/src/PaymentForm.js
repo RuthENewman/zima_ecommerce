@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ShippingAddress from './ShippingAddress';
+import {Link} from 'react-router-dom';
 
 class PaymentForm extends Component {
   constructor() {
@@ -70,7 +71,7 @@ class PaymentForm extends Component {
                 ? <ShippingAddress />
                 : <br/>
               }
-              <input onClick={this.props.handleOrderSubmit} className="category_eng btn" type="submit" value="Complete order"></input>
+              <Link to="/myaccount"><input onClick={this.props.handleOrderSubmit} className="category_eng payment-confirmation btn" type="submit" value="Complete order"></input></Link>
 
           </form>
         </div>

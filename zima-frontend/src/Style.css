@@ -195,6 +195,13 @@ h3#shopping-cart-header {
   padding: 0.5em;
 }
 
+.order-item-info {
+  float: right;
+  width: 50%;
+  padding: 1em;
+  line-height: 2em;
+}
+
 .order-history-image {
   height: 150px;
 }
@@ -726,11 +733,18 @@ margin: 1em;
 
 }
 
+.payment-confirmation {
+  font-size: 1em;
+  padding: 1em;
+  border-radius: 5%;
+  width: 100%;
+}
+
 .CC-payment button {
   font-size: 1em;
   padding: 0.2em;
   border-radius: 5%;
-
+  width: 100%;
 }
 
 

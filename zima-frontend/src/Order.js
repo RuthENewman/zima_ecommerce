@@ -12,14 +12,13 @@ class Order extends Component {
   render() {
     return (
       <div className="order-details">
-        <h3>Order</h3>
-        <ul>
         { (this.props.order.products.length > 0)
           ? this.props.order.products.map(product =>
             <OrderItem key={product.id} order={this.props.order} product={product}/>)
           : <br/>
+
         }
-        </ul>
+
       </div>
     )
   }
