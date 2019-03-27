@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 
 class BrowsingByTheme extends Component {
 
   render() {
     return (
     <div className="theme">
+      <Navbar
+      signout={this.props.signout}
+      username={this.props.username}
+      />
       <h2 className="category_eng">Browse by theme</h2>
         <div id="icons_container">
             <div className="theme_icon">

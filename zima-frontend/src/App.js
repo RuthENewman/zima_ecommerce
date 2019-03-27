@@ -118,10 +118,6 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar
-        username={this.state.username}
-        signout={this.signout}
-        />
           <Main
           shuffle={this.shuffle}
           products={this.state.products}
@@ -132,6 +128,7 @@ class App extends Component {
           selectedCategory={this.state.selectedCategory}
           deselectCategory={this.deselectCategory}
           signin={this.signin}
+          signout={this.signout}
           username={this.state.username}
           toggleShowingSideBar={this.toggleShowingSideBar}
           closeSideBar={this.closeSideBar}

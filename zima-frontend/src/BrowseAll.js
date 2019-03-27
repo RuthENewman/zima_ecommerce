@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import ProductsContainer from './ProductsContainer';
+import Navbar from './Navbar';
 
 class BrowseAll extends Component {
   constructor(props) {
@@ -13,6 +14,10 @@ class BrowseAll extends Component {
   render() {
     return(
       <Fragment>
+        <Navbar
+        signout={this.props.signout}
+        username={this.props.username}
+        />
         <ProductsContainer
           addToCart={this.props.addToCart}
           removeFromCart={this.props.removeFromCart}

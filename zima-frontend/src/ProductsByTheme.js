@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import ProductItem from './ProductItem';
-const baseURL = "http://localhost:3000/api/v1/categories";
+import Navbar from './Navbar';
 
+const baseURL = "http://localhost:3000/api/v1/categories";
 
 class ProductsByTheme extends Component {
   constructor() {
@@ -41,16 +42,19 @@ class ProductsByTheme extends Component {
 
   render() {
     return (
-    <div className="product-container">
-      <div className="product-list">
-      {
-        this.state.selectedProducts.map(product => <ProductItem
-          key={product.id}
-          product={product}
-          addToCart={this.props.addToCart}
-          productsInCart={this.props.productsInCart}
-          />)
-      }
+    <div>
+      <Navbar signout={this.props.signout} username={this.props.username}/>
+      <div className="product-container">
+        <div className="product-list">
+        {
+          this.state.selectedProducts.map(product => <ProductItem
+            key={product.id}
+            product={product}
+            addToCart={this.props.addToCart}
+            productsInCart={this.props.productsInCart}
+            />)
+        }
+        </div>
       </div>
     </div>
     )

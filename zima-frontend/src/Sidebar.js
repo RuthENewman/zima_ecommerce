@@ -13,13 +13,13 @@ class Sidebar extends Component {
   render() {
     return (
       <div id="sideNavBar" className="sidenav">
-         <Link className="closebtn" onClick={() => this.props.closeSideBar()}></Link>
+         <Link className="closebtn category_eng" onClick={() => this.props.closeSideBar()}>X</Link>
          <Link to="/about" className="category_eng">About</Link>
-         <Link to="/products" className="category_eng">Browse All</Link>
-         <Link to="/bytheme" className="category_eng">Browse By Theme</Link>
+         <Link to="/allproducts" className="category_eng">Browse All</Link>
+         <Link to="/allbytheme" className="category_eng">Browse By Theme</Link>
          <Link to="/createaccount" className="category_eng">Create An Account</Link>
-         <Link to="/login" className="category_eng">Log In</Link>
-         <Link to="/contact" className="category_eng">Contact</Link>
+         <Link to="/signin" className="category_eng">Log In</Link>
+         <Link to="/comingsoon" className="category_eng">По-Русский</Link>
       </div>
     )
   }

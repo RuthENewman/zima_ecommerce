@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ProductsList from './ProductsList';
 import Cart from './Cart';
-
+import Navbar from './Navbar';
 
 class ProductsContainer extends Component {
 
@@ -15,10 +15,6 @@ class ProductsContainer extends Component {
           addToCart={this.props.addToCart}
           productsInCart={this.props.productsInCart}
           />
-        <Cart
-          productsInCart={this.props.productsInCart}
-          removeFromCart={this.props.removeFromCart}
-        />
       </div>
     )
 

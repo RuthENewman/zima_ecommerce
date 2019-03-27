@@ -69,6 +69,7 @@ a {
   width: 98%;
   margin: 0 auto;
   align-content: center;
+  margin-bottom: 3em;
 }
 
 .product-item {
@@ -180,7 +181,6 @@ h3#shopping-cart-header {
   padding: 0.2em;
   z-index: 3;
   width: 100%;
-  margin-right: -1.5em;
 }
 
 .order-details {
@@ -752,14 +752,14 @@ margin: 1em;
 
 .sidenav {
   height: 100%;
-  width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 4;
   top: 0;
   left: 0;
   background-color: #111;
   overflow-x: hidden;
-  padding-top: 60px;
+  padding-right: 2em;
+  padding-top: 4em;
   transition: 0.5s;
 }
 
@@ -789,9 +789,10 @@ margin: 1em;
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  right: 0;
+  font-size: 1.2em;
+  padding: 1em;
+  font-weight: bold;
 }
 
 #main {

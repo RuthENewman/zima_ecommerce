@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from './API';
+import Navbar from './Navbar';
 
 class SignInForm extends Component {
   constructor() {
@@ -37,6 +38,7 @@ class SignInForm extends Component {
   render() {
     return (
       <div>
+        <Navbar username={this.props.username} signout={this.props.signout}/>
         <h2 className="category_eng">Log in to your account</h2>
         <form className="signin_form">
           <p><label

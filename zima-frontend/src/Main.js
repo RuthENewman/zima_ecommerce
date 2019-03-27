@@ -24,10 +24,19 @@ class Main extends Component {
         toggleShowingSideBar={this.props.toggleShowingSideBar}
         closeSideBar={this.props.closeSideBar}
         sideBar={this.props.sideBar}
+        username={this.props.username}
+        signout={this.props.signout}
         />} />
-      <Route exact path="/about" component={About} />
+      <Route exact path="/about" component={() =>
+        <About
+        username={this.props.username}
+        signout={this.props.signout}
+        />}
+        />
       <Route exact path="/signin"
         component={(routerProps) => <SignInForm
+          username={this.props.username}
+          signout={this.props.signout}
           signin={this.props.signin} {...routerProps}/>}/>
       <Route exact path="/allproducts" component={() => <BrowseAll
         products={this.props.products}
@@ -35,33 +44,54 @@ class Main extends Component {
         addToCart={this.props.addToCart}
         shuffle={this.props.shuffle}
         removeFromCart={this.props.removeFromCart}
+        username={this.props.username}
+        signout={this.props.signout}
         />} />
       <Route exact path="/allbytheme"
         component={() => <BrowsingByTheme
         selectCategory={this.props.selectCategory}
-        selectedCategory={this.props.selectedCategory}/> }/>
+        selectedCategory={this.props.selectedCategory}
+        username={this.props.username}
+        signout={this.props.signout}
+        /> }/>
       <Route path="/bytheme/"
         component={() => <ProductsByTheme
           products={this.props.products}
           productsInCart={this.props.productsInCart}
           addToCart={this.props.addToCart}
           selectedCategory={this.props.selectedCategory}
-          shuffle={this.props.shuffle} />}
+          shuffle={this.props.shuffle}
+          username={this.props.username}
+          signout={this.props.signout}
+          />}
         />
-      <Route exact path="/comingsoon" component={ComingSoon} />
-      <Route exact path="/checkoutform" component={CheckoutForm} />
+      <Route exact path="/comingsoon" component={() => <ComingSoon
+        username={this.props.username}
+        signout={this.props.signout}
+        />} />
+      <Route exact path="/checkoutform" component={() => <CheckoutForm
+        username={this.props.username}
+        signout={this.props.signout}
+        />} />
       <Route exact path="/shoppingcart" component={() =>
         <Cart
         productsInCart={this.props.productsInCart}
         removeFromCart={this.props.removeFromCart}
+        username={this.props.username}
+        signout={this.props.signout}
         />} />
       <Route exact path="/myaccount"
-      component={routerProps => <OrderHistory username={this.props.username} {...routerProps} />} />
-      <Route exact path="/createaccount" component={CreateAccount}/>
+      component={routerProps => <OrderHistory username={this.props.username} signout={this.props.signout} {...routerProps} />} />
+      <Route exact path="/createaccount" component={() => <CreateAccount
+        username={this.props.username}
+        signout={this.props.signout}
+        />}/>
       <Route exact path="/completeorder" component={() =>
         <CompleteOrder
         productsInCart={this.props.productsInCart}
         removeFromCart={this.props.removeFromCart}
+        username={this.props.username}
+        signout={this.props.signout}
         />} />
     </Fragment>
     )
