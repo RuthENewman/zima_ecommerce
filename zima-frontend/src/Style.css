@@ -7,6 +7,8 @@
 body, html {
   height: 100%;
   margin: 0;
+  background: url("https://s3.eu-west-2.amazonaws.com/zimaproducts/winter-scenes-moscow-river-russia.jpg");
+  background-size: cover;
 }
 
 h1 {
@@ -18,8 +20,14 @@ h1 {
 }
 
 h2 {
-  margin-top: 1em;
   text-align: center;
+  background-color: white;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 1em;
+  border-style: dotted;
+  padding: 0.5em;
+  border-radius: 4%;
 }
 
 h3 {
@@ -72,6 +80,7 @@ a {
   border-radius: 5%;
   margin: 0 auto;
   margin-top: 1em;
+  background-color: white;
 }
 
 .product-item img {
@@ -169,6 +178,9 @@ h3#shopping-cart-header {
 .main_header {
   background-color: #000000;
   padding: 0.2em;
+  z-index: 3;
+  position: fixed;
+  width: 100%;
 }
 
 
@@ -318,7 +330,7 @@ h3#shopping-cart-header {
   background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
-  font-size: 80px;
+  font-size: 5em;
   border: 10px solid #f1f1f1;
   position: fixed; /* Stay fixed */
   top: 50%;
@@ -412,7 +424,7 @@ h3#shopping-cart-header {
   padding: 5px 20px 15px 20px;
   border-radius: 3px;
   margin: 0 auto;
-  margin-top: 1em;
+  margin-top: 2em;
   margin-bottom: 2em;
   width: 50%;
 }
@@ -537,13 +549,14 @@ margin: 1em;
   color: black;
   border-radius: 4%;
   position: relative;
-  width: 30%;
+  width: 40%;
   margin: 0 auto;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   padding: 0.4em;
   position: relative;
-
+  background-color: white;
+  font-size: 2em;
 }
 
 #about_summary {
@@ -557,16 +570,22 @@ margin: 1em;
   padding: 2em;
   margin-top: 1em;
   margin-bottom: 1em;
+  background-color: white;
 }
 
 #very_large_header {
-  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2em;
   color: black;
   border-color: black;
   border-style: dotted;
   border-radius: 4%;
   padding: 1em;
-  margin: 3em;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 4em;
+  background-color: white;
 }
 
 .signin_form {
@@ -579,6 +598,7 @@ margin: 1em;
   border-style: dotted;
   border-radius: 5%;
   position: relative;
+  background-color: white;
 }
 
 #emailInput, #passwordInput {
@@ -591,7 +611,7 @@ margin: 1em;
 }
 
 #login_button {
-  width: 40%;
+  width: 50%;
   position: relative;
   margin: 0 auto;
   margin-left: 30%;
@@ -615,6 +635,7 @@ margin: 1em;
   border-style: dotted;
   border-radius: 5%;
   text-align: center;
+  background-color: white;
 }
 
 #firstNameInput, #lastNameInput, #emailInputCreateAccount, #PasswordCreateAccount {
@@ -646,6 +667,7 @@ margin: 1em;
   margin-top: 2em;
   margin-bottom: 2em;
   padding: 1.5em;
+  background-color: white;
 }
 
 #payment_container {
@@ -666,7 +688,7 @@ margin: 1em;
   padding: 5px 20px 15px 20px;
   line-height: 2em;
   border: 1px solid lightgrey;
-  border-radius: 3px;
+  border-radius: 6px;
   background-color: #f2f2f2;
   margin-bottom: 2em;
 }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import BrowseAll from './BrowseAll';
 import CompleteOrder from './CompleteOrder';
 
@@ -42,19 +42,30 @@ class Cart extends Component {
       return parseFloat(totalPriceOfCart.toFixed(2));
     }
 
+    initializeQuantity = () => {
+      this.setState({
+        shoppingCartProducts: this.state.shoppingCartProducts.forEach(product =>
+        product.quantity = 1)
+      })
+    }
+
     incrementQuantity = (selectedProduct) => {
       this.setState({
-        cartProductsWithQuantities: this.state.shoppingCartProducts.map(product =>
-          product.id === selectedProduct.id && product.quantity != null
-          ?  product.quantity += 1
-          :  product.quantity = 1
-        )
+        cartProductsWithQuantities: this.state.shoppingCartProducts.forEach(product =>
+        product.quantity += 1)
+      })
+    }
+
+    handleChange = event => {
+      this.setState({
+        [event.target.name]: event.target.value,
       })
     }
 
   componentDidMount() {
     this.setProductsInCart()
     this.setCartSize()
+
   }
 
   render() {
@@ -72,11 +83,11 @@ class Cart extends Component {
           this.state.cartSize >= 1
             ? this.props.productsInCart.map(
             product =>
-          (<div>
+          (<div key={product.id}>
             <h3 className="category_eng">{product.name} <span className="price">£{product.price}</span>
             <br/>
             <label id="quantityLabel" className="category_eng">Quantity:</label>
-            <input id="quantityInput" type="number" name="quantity" min="1" onClick={() => this.incrementQuantity(product)}></input>
+            <input id="quantityInput" type="number" name="quantity" min="1" value={this.state.cartProductsWithQuantities.quantity} onClick={() => this.incrementQuantity(product)}></input>
             <button className="category_eng remove_button" onClick={() => this.props.removeFromCart(product)}>Remove from cart</button></h3>
           </div>)
           )
@@ -91,8 +102,8 @@ class Cart extends Component {
           this.state.cartSize >= 1
           ? <button
           className="category_eng cart_button"
-          ><Link to="/completeorder" component={CompleteOrder}>Go to checkout</Link></button>
-          : <button className="category_eng cart_button"><Link to="/allproducts" component={BrowseAll}>View products</Link></button>
+          ><Route to="/completeorder" component={CompleteOrder}>Go to checkout</Route></button>
+          : <button className="category_eng cart_button"><Route to="/allproducts" component={BrowseAll}>View products</Route></button>
         }
 
       </div>

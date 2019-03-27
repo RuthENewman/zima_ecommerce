@@ -21,6 +21,7 @@ class App extends Component {
       selectedCategory: null,
       username: '',
       currentUser: {},
+      sideBar: false
     }
 
   }
@@ -49,6 +50,18 @@ class App extends Component {
     localStorage.removeItem('token')
     this.setState({
       username: ''
+    })
+  }
+
+  toggleShowingSideBar = () => {
+    this.setState({
+      sideBar: !this.state.sideBar
+    })
+  }
+
+  closeSideBar = () => {
+    this.setState({
+      sideBar: false,
     })
   }
 
@@ -105,7 +118,6 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Sidebar />
         <Navbar
         username={this.state.username}
         signout={this.signout}
@@ -121,6 +133,9 @@ class App extends Component {
           deselectCategory={this.deselectCategory}
           signin={this.signin}
           username={this.state.username}
+          toggleShowingSideBar={this.toggleShowingSideBar}
+          closeSideBar={this.closeSideBar}
+          sideBar={this.state.sideBar}
           />
 
       </BrowserRouter>

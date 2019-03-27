@@ -19,7 +19,12 @@ class Main extends Component {
   render() {
     return (
     <Fragment>
-      <Route exact path="/" component={HomePage} />
+      <Route exact path="/" component={() =>
+        <HomePage
+        toggleShowingSideBar={this.props.toggleShowingSideBar}
+        closeSideBar={this.props.closeSideBar}
+        sideBar={this.props.sideBar}
+        />} />
       <Route exact path="/about" component={About} />
       <Route exact path="/signin"
         component={(routerProps) => <SignInForm

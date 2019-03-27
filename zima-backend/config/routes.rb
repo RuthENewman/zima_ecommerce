@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create, :index]
       post 'signin', to: 'users#signin'
       get 'validate', to: 'users#validate'
-      get 'myaccount', to: 'users#get_order_history'
+      get '/myaccount', to: 'users#get_order_history'
       resources :orders
       get '/shoppingcart', to: 'order_items#index'
       resources :order_items, path: '/shoppingcart/items'

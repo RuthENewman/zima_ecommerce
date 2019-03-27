@@ -20,7 +20,6 @@ class Api::V1::OrdersController < ApplicationController
 
     params[:products].each do |product|
       @oi = OrderItem.create(order: @order, product_id: product['id'], quantity: 1, price: product['price'])
-      byebug
     end
 
     if @order.valid?

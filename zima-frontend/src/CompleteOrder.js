@@ -30,7 +30,7 @@ class CompleteOrder extends Component {
        'Authorization': localStorage.getItem('token')
      },
      body: JSON.stringify({ products: this.props.productsInCart })
-   })
+   }).then(alert('Your order has been processed!'))
  }
 
   render() {

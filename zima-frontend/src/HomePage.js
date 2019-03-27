@@ -2,26 +2,24 @@ import React, {Component} from 'react';
 import Style from './Style.css';
 import Sidebar from './Sidebar';
 
-// const sideNavBar = document.getElementById("sideNavBar");
-// const main = document.getElementById("main");
-
 class HomePage extends Component {
   constructor() {
     super()
 
     this.state = {
-
+      sideBarStatus: true
     }
   }
 
-  openNav() {
-    return <Sidebar />
-  }
-
-
   render() {
     return(
+
       <div id="home-page-div">
+          {
+            this.props.sideBar == true
+            ?  <Sidebar closeSideBar={this.props.closeSideBar} sideBar={this.props.sideBar} />
+            : null
+          }
         <div className="bg-image" id="img1">
         </div>
         <div className="bg-image" id="img2">
@@ -31,7 +29,7 @@ class HomePage extends Component {
         <div className="bg-image" id="img4">
         </div>
         <div className="bg-text">
-        <span onClick={() => this.openNav}>ZIMA (ЗИМА)
+        <span onClick={() => this.props.toggleShowingSideBar()}>ZIMA (ЗИМА)
         </span>
         </div>
       </div>

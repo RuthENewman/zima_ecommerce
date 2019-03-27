@@ -10,15 +10,10 @@ class Sidebar extends Component {
     }
   }
 
-  closeNav() {
-    // document.getElementById("sideNavBar").style.width = "0";
-    // document.getElementById("main").style.marginLeft = "0";
-  }
-
   render() {
     return (
       <div id="sideNavBar" className="sidenav">
-         <Link to="javascript:void(0)" className="closebtn" onClick={this.closeNav()}>&times;</Link>
+         <Link className="closebtn" onClick={() => this.props.closeSideBar()}></Link>
          <Link to="/about" className="category_eng">About</Link>
          <Link to="/products" className="category_eng">Browse All</Link>
          <Link to="/bytheme" className="category_eng">Browse By Theme</Link>
