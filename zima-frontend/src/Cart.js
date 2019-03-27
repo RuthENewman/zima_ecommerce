@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-
+import CartItem from './CartItem';
 
 class Cart extends Component {
   constructor() {
     super()
 
     this.state = {
-      shoppingCartProducts: [],
-      cartProductQuantities: [],
+      shoppingCartProducts: []
     }
 
   }
@@ -29,9 +28,6 @@ class Cart extends Component {
       })
     }
 
-    priceTimesQuantity = () => {
-
-    }
 
     totalPrice = () => {
       let totalPriceOfCart = 0;
@@ -41,32 +37,10 @@ class Cart extends Component {
       return parseFloat(totalPriceOfCart.toFixed(2));
     }
 
-    initializeQuantity = () => {
-      this.setState({
-        cartProductQuantities: this.state.shoppingCartProducts.forEach(product => {
-          this.state.cartProductQuantities.push(product, product.quantity = 1)
-        })
-      })
-    }
-
-    incrementQuantity = (selectedProduct) => {
-      this.setState({
-        cartProductQuantities: this.state.shoppingCartProducts.forEach(product =>
-        product
-        )
-      })
-    }
-
-    handleChange = event => {
-      this.setState({
-        [event.target.name]: event.target.value,
-      })
-    }
 
   componentDidMount() {
     this.setProductsInCart()
     this.setCartSize()
-    this.initializeQuantity()
   }
 
   render() {
@@ -84,13 +58,7 @@ class Cart extends Component {
           this.state.cartSize >= 1
             ? this.props.productsInCart.map(
             product =>
-          (<div key={product.id}>
-            <h3 className="category_eng">{product.name} <span className="price">£{product.price}</span>
-            <br/>
-            <label id="quantityLabel" className="category_eng">Quantity:</label>
-            <input id="quantityInput" type="number" name={product.name} min="1" value={1} onChange={() => this.incrementQuantity(product)}></input>
-            <button className="category_eng remove_button" onClick={() => this.props.removeFromCart(product)}>Remove from cart</button></h3>
-          </div>)
+          (<CartItem product={product} key={product.id} productsInCart={this.props.productsInCart} removeFromCart={this.props.removeFromCart}/>)
           )
           : <h3 className="category_eng">You have no items in your cart!</h3>
         }
