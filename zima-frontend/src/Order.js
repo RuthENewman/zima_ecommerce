@@ -16,8 +16,16 @@ class Order extends Component {
     return `${day}/${month}/${year}`;
   }
 
+  totalOrderPrice = (orderItems) => {
+    let price = 0.00;
+    orderItems.forEach(orderItem =>
+      price = price + parseFloat(orderItem.price)
+    );
+    return parseFloat(price).toFixed(2);
+  }
+
   render() {
-    const { amendDate } = this;
+    const { amendDate, totalOrderPrice } = this;
     return (
       <div className="order-details">
         <h3>Date ordered: {amendDate(this.props.order.order_items[0].created_at)}</h3>
@@ -27,7 +35,7 @@ class Order extends Component {
           : <br/>
 
         }
-
+        <h4>Total price: £{parseFloat(totalOrderPrice(this.props.order.order_items))}</h4>
       </div>
     )
   }
