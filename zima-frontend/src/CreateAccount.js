@@ -3,8 +3,8 @@ import API from './API';
 import Navbar from './Navbar';
 
 class CreateAccount extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       first_name: '',

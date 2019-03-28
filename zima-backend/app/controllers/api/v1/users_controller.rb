@@ -50,7 +50,7 @@ class Api::V1::UsersController < ApplicationController
   def validate
     @user = get_current_user
     if @user
-      render json: { id: @user.id, first_name: @user.first_name, last_name: @user.last_name, email: @user.email }
+      render json: { id: @user.id, first_name: @user.first_name, last_name: @user.last_name, email: @user.email, token: issue_token({id: @user.id})  }
     else
       render json: {error: 'Email and/or password invalid'}, status: 401
     end
