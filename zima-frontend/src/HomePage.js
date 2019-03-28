@@ -7,7 +7,7 @@ class HomePage extends Component {
     super()
 
     this.state = {
-      sideBarStatus: true
+
     }
   }
 
@@ -17,7 +17,12 @@ class HomePage extends Component {
       <div id="home-page-div">
           {
             this.props.sideBar === true
-            ?  <Sidebar closeSideBar={this.props.closeSideBar} sideBar={this.props.sideBar} />
+            ?  <Sidebar
+            signout={this.props.signout}
+            closeSideBar={this.props.closeSideBar}
+            sideBar={this.props.sideBar}
+            username={this.props.username}
+            />
             : null
           }
         <div className="bg-image" id="img1">

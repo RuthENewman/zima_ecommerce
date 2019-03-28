@@ -28,13 +28,11 @@ class Navbar extends Component {
               ?  <li className="category_eng"><Link to="/myaccount">My Account</Link></li>
               : <li className="category_eng"><Link to="/createaccount">Create an account</Link></li>
             }
-
             {
               username !== ''
-              ? <li className="category_eng" onClick={signout}><Link to="/">Log out</Link></li>
+              ? <li className="category_eng" onClick={this.props.signout}><Link to="/">Log out</Link></li>
               : <li className="category_eng"><Link to="/signin">Log in</Link></li>
             }
-
           </ul>
         </div>
       </header>
