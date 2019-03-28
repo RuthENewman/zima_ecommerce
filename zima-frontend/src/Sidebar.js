@@ -13,7 +13,7 @@ class Sidebar extends Component {
   render() {
     return (
       <div id="sideNavBar" className="sidenav">
-         <Link className="closebtn category_eng" onClick={() => this.props.closeSideBar()}>X</Link>
+         <p className="closebtn category_eng" onClick={() => this.props.closeSideBar()}>X</p>
          <Link to="/about" className="category_eng">About</Link>
          <Link to="/allproducts" className="category_eng">Browse All</Link>
          <Link to="/allbytheme" className="category_eng">Browse By Theme</Link>
@@ -24,7 +24,7 @@ class Sidebar extends Component {
          }
          {
            this.props.username !== ''
-           ? <Link to="/allbytheme" className="category_eng" onClick={this.props.signout}>Log out</Link>
+           ? <Link to="/" className="category_eng" onClick={this.props.signout}>Log out</Link>
            : <Link to="/signin" className="category_eng">Log in</Link>
          }
          <Link to="/comingsoon" className="category_eng">По-Русский</Link>

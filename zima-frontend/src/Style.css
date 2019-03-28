@@ -80,7 +80,8 @@ a {
   position: relative;
   border-radius: 5%;
   margin: 0 auto;
-  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-top: 2em;;
   background-color: white;
 }
 
@@ -247,9 +248,9 @@ h3#shopping-cart-header {
   padding: 0.2em;
   width: 250px;
   position: relative;
-  margin: 0 auto;
-  margin-top: 1em;
+  margin: 1em;
 }
+
 .theme_icon img {
   width: 100%;
   margin: 0;
@@ -556,13 +557,14 @@ span.price {
 
 #icons_container {
 display: flex;
-flex-direction: row;
 flex-wrap: wrap;
-width: 98%;
+width: 100%;
 margin: 0 auto;
 align-content: center;
-padding: 1em;
-margin: 1em;
+justify-content: center;
+justify-items: left;
+padding: 0.5em;
+margin: 0.1em;
 }
 
 #about_header {
@@ -793,6 +795,7 @@ margin: 1em;
   font-size: 1.2em;
   padding: 1em;
   font-weight: bold;
+  color: white;
 }
 
 #main {

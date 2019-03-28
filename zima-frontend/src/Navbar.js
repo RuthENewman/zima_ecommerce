@@ -21,8 +21,13 @@ class Navbar extends Component {
             <li className="category_eng"><Link to="/allproducts">Browse All</Link></li>
             <li className="category_eng"><Link to="/allbytheme">Browse By Theme</Link></li>
             <li className="category_eng"><Link to="/shoppingcart">Shopping Cart</Link></li>
-            <li className="category_eng"><Link to="/completeorder">Checkout</Link></li>
-            <li className="category_rus"><Link to="/comingsoon">По-Русский</Link></li>
+            {
+              username !== ''
+              ? <li className="category_eng"><Link to="/completeorder">Checkout</Link></li>
+              : <li className="category_rus"><Link to="/comingsoon">По-Русский</Link></li>
+            }
+
+
             {
               username !== ''
               ?  <li className="category_eng"><Link to="/myaccount">My Account</Link></li>

@@ -3,13 +3,15 @@ import {Link} from 'react-router-dom';
 import CartItem from './CartItem';
 import CompleteOrder from './CompleteOrder';
 import Navbar from './Navbar';
+let checkoutButton;
 
 class Cart extends Component {
   constructor() {
     super()
 
     this.state = {
-      shoppingCartProducts: []
+      shoppingCartProducts: [],
+      allowCheckout: true,
     }
 
   }
@@ -30,6 +32,21 @@ class Cart extends Component {
       })
     }
 
+    moveToCheckout = () => {
+      if (this.props.username !== '' && this.state.cartSize >= 1) {
+        checkoutButton = <button className="category_eng cart_button"><Link to="/completeorder" component={CompleteOrder}>Go to checkout</Link></button>
+        return checkoutButton;
+      } else if (this.props.username !== '' && this.state.cartSize < 1){
+        checkoutButton = <button className="category_eng cart_button"><Link to="/allproducts">View products</Link></button>
+        return checkoutButton;
+      } else if (this.props.username === '' && this.state.cartSize >= 1) {
+        checkoutButton = <button className="category_eng cart_button"><Link to="/signin">Sign in to complete your purchase</Link></button>
+        return checkoutButton;
+      } else {
+        checkoutButton = <button className="category_eng cart_button"><Link to="/allproducts">View products</Link></button>
+        return checkoutButton;
+      }
+      }
 
     totalPrice = () => {
       let totalPriceOfCart = 0;
@@ -67,18 +84,8 @@ class Cart extends Component {
             : <h3 className="category_eng">You have no items in your cart!</h3>
           }
           <hr />
-          <h3 id="#shopping-cart-total" className="price">Total: <span className="price">£{this.totalPrice()}</span></h3>{
-
-          }
-
-          {
-            this.state.cartSize >= 1
-            ? <button
-            className="category_eng cart_button"
-            ><Link to="/completeorder" component={CompleteOrder}>Go to checkout</Link></button>
-            : <button className="category_eng cart_button"><Link to="/allproducts">View products</Link></button>
-          }
-
+          <h3 id="#shopping-cart-total" className="price">Total: <span className="price">£{this.totalPrice()}</span></h3>
+          { this.moveToCheckout() }
         </div>
       </div>
     </div>
